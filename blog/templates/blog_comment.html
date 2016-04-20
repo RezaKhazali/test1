@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<h3>User comments about this blog</h3>
+<ul>
+{% for comment in comments %}
+<li><strong>{{ comment.name }}:</strong> {{ comment.comment }}</li>
+{% endfor %}
+</ul>
+
+<h3>Add your comment about "{{ blog.name }}"</h3>
+<form method="post" action="">
+	{% csrf_token %}
+	<!--<p>
+	Your Name:<br />
+	<input type="text" name="name" />
+	</p>
+	<p>
+	You comment:<br />
+	<textarea name="comment"></textarea>
+	</p>-->
+	<table>
+		{{ form.as_table }}
+	</table>
+	<input type="submit" />
+</form>
+
+{% endblock %}

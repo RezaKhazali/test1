@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+{% block content %}
+		{% for entry in entries %}
+		<article>
+			<h1>{{ entry.headline }}</h1>
+			<span class="subtitle">By
+			{% for author in entry.authors.all %}
+				{% if author.name == "John" %}
+				Agha
+				{% endif %}
+
+				{{ author.name }}{% if not forloop.last %},{% endif %}
+			{% endfor %}
+			</span>
+			{{ entry.body }}
+		</article>
+		{% endfor %}
+{% endblock %}

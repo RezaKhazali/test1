@@ -1,0 +1,118 @@
+<!doctype html>
+<html>
+<head>
+	<title>My Blog</title>
+	<style>
+	body {
+		font-family:Georgia, serif;
+	}
+
+	a, a:visited {
+		text-decoration:none;
+		color:#2E46B2;
+	}
+
+	a:hover {
+		color:#942300;
+	}
+
+	ul {
+		padding-left:0px;
+		list-style:none;
+	}
+
+	#container {
+		width:800px;
+		margin:20px auto;
+	}
+
+	header#header {
+		font-weight:bold;
+		/*text-transform:capitalize;*/
+		text-align:center;
+		font-size:30px;
+		padding:20px 30px;
+		background:#E0F5F4;
+		color:#265373;
+		border-radius:8px;
+		margin-bottom:10px;
+	}
+
+	aside#sidebar {
+		float:right;
+		width:200px;
+		padding:20px;
+		background:#eee;
+		border-radius:8px;
+		font-size:0.9em;
+	}
+
+	aside#sidebar h1 {
+		font-family:"Palatino Linotype", "Book Antiqua", Palatino, serif;
+		font-size:18px;
+		margin:0;
+		margin-bottom:10px;
+	}
+	section#content {
+		padding:10px;
+		margin-right:250px;
+		background:#eee;
+		border-radius:8px;
+	}
+
+	section#content article {
+		border:1px solid #ccc;
+		background-color:#f6f6f6;
+		padding:10px;
+		border-radius:8px;
+		margin-bottom:10px;
+	}
+
+	section#content article:last-child {
+		margin-bottom:0;
+	}
+
+	section#content article h1 {
+		margin-top:0;
+		margin-bottom:2px;
+		color:#872321;
+		text-transform:uppercase;
+	}
+
+	section#content article span.subtitle {
+		font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
+		color:#999;
+		font-size:12px;
+		margin-top:0;
+		display:block;
+	}
+
+	</style>
+</head>
+<body>
+	<div id="container">
+		<header id="header">Title: {{ blog.name }}</header>
+		<aside id="sidebar">
+			<h1>Latest Posts</h1>
+			<ul>
+				<li><a href="#">This is a fantastic post</a></li>
+				<li><a href="#">This is a fantastic post</a></li>
+				<li><a href="#">This is a fantastic post</a></li>
+				<li><a href="#">This is a fantastic post</a></li>
+				<li><a href="#">This is a fantastic post</a></li>
+			</ul>
+
+			<h1>About this blog</h1>
+			<p>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat.
+			</p>
+		</aside>
+		<section id="content">
+			{% block content %}{% endblock %}
+		</section>
+	</div>
+</body>
+</html>
